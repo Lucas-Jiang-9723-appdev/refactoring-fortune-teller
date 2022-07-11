@@ -179,4 +179,16 @@ class DiceController < ApplicationController
 
     render({:template => "dice_templates/three_twenty.html.erb"})
   end
+
+  def infinite
+    @times = params.fetch("times")
+    @sides = params.fetch("sides")
+    @array_roll = Array.new
+    @times.to_i.times do
+      @array_roll.push(rand(@sides.to_i)+1)
+    end
+    render({:template => "dice_templates/infinite.html.erb"})
+  end
 end
+
+

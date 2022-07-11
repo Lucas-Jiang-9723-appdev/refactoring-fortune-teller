@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # PART 2: RCAV DEBUGGING
   # ======================
-
+  get("/zodiacs/:the_sign",{:controller => "fortunes", :action => "horoscope"})
   get("/zodiacs/aries", { :controller =>  "fire", :action =>  "ram" })
   get("/zodiacs/leo", { :controller => "fire", :action => "lion" })
   get("/zodiacs/sagittarius", { :controller => "fire", :action => "archer" })
@@ -27,7 +27,8 @@ Rails.application.routes.draw do
 
   # PART 3: MORE R→C→A→V PRACTICE
   # ==========================
-    
+  
+  get("/roll/:times/:sides",{:controller => "dice", :action => "infinite"})
   get("/roll/1/6", { :controller => "dice", :action => "one_six" })
   get("/roll/2/6", { :controller => "dice", :action => "two_six" })
   get("/roll/3/6", { :controller => "dice", :action => "three_six" })
